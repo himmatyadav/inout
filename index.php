@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="0;url=pages/adminbase.php">
+<meta http-equiv="refresh" content="0;url=pages/welcome.php">
 <title>InOut</title>
 <script language="javascript">
-    window.location.href = "pages/adminbase.php"
+    window.location.href = "pages/welcome.php"
 </script>
 </head>
 <body>
-Go to <a href="pages/adminbase.php">/pages/adminbase.php</a>
+Go to <a href="pages/adminbase.php">/pages/welcome.php</a>
 </body>
 </html>
