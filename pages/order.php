@@ -85,10 +85,10 @@
 	    	<input type="text" id="name" class="form-control ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" placeholder="Full Name" autofocus="">
       -->
 
-	    <label class="sr-only">Username</label>
+	    <label class="sr-only">Category</label>
 	    	<input type="text" name="username" class="form-control ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" placeholder="Username" required="" autofocus="">
 	    
-      <label class="sr-only">Email</label>
+      <label class="sr-only">Description</label>
 	    	<input type="text" name="email" class="form-control ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" placeholder="Email" required="" autofocus="">
 
      

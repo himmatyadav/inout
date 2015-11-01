@@ -30,7 +30,7 @@
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<div class="panel panel-default">
+				<div class="panel panel-default">
                         <div class="panel-heading">
                             Search
                         </div>
@@ -83,15 +83,15 @@
 									<li><a href="./products.html">Varius purus</a></li>									
 								</ul>-->
 							</li>															
-							<li><a href="prints.php">Prints</a></li>			
-							<li><a href="crafts.php">Crafts</a>
+							<li><a href="./products.html">Prints</a></li>			
+							<li><a href="./products.html">Crafts</a>
 								<!--<ul>									
 									<li><a href="./products.html">Gifts and Tech</a></li>
 									<li><a href="./products.html">Ties and Hats</a></li>
 									<li><a href="./products.html">Cold Weather</a></li>
 								</ul>-->
 							</li>							
-							<li><a href="sculptures.php">Sculptures</a></li>
+							<li><a href="./products.html">Sculptures</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -116,7 +116,8 @@
 			<section class="header_text">
 			<section class="header_text">
 				We stand for top quality traditional art.
-                		<br/> 
+                		<br/>
+				<br/>
 			</section>
 			<section class="main-content">
 				<div class="row">
@@ -133,47 +134,31 @@
 									<div class="carousel-inner">
 										<div class="active item">
 											<ul class="thumbnails">												
+												<?php 
+												include('connect.php');
+												$sql="SELECT * FROM product WHERE category='sculpture'";
+												$result=mysql_query($sql);
+												while($row=mysql_fetch_array($result))
+												{
+													$image_name=$row['image'];?>
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="../themes/images/paint.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
-														<p class="price">$17.25</p>
+														<p><a href="product_detail.php?id=<?php echo $row['id'];?>"><?php echo "<img src='../themes/images/$image_name' alt='Smiley face' class='img-thumbnail'>";?></a></p>
+														<a href="product_detail.html" class="title"><?php echo $row['name'];?></a><br/>
+														<a href="products.html" class="category"><?php echo $row['city'];?></a>
+														<p class="price"><?php echo $row['price']." INR";?></p>
 													</div>
 												</li>
-												<li class="span3">
-													<div class="product-box">
-														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="../themes/images/paint1.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$32.50</p>
-													</div>
-												</li>
-												<li class="span3">
-													<div class="product-box">
-														<p><a href="product_detail.html"><img src="../themes/images/paint2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly turned</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$14.20</p>
-													</div>
-												</li>
-												<li class="span3">
-													<div class="product-box">
-														<p><a href="product_detail.html"><img src="../themes/images/paint3.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think fast</a><br/>
-														<a href="products.html" class="category">World once</a>
-														<p class="price">$31.45</p>
-													</div>
-												</li>
+												<?php } ?>
+												
 											</ul>
 										</div>
-										<div class="item">
+							<!--			<div class="item">
 											<ul class="thumbnails">
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="../themes/images/paint4.jpg" alt="" /></a></p>
+														<p><a href="product_detail.html"><img src="themes/images/ladies/5.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">Know exactly</a><br/>
 														<a href="products.html" class="category">Quis nostrud</a>
 														<p class="price">$22.30</p>
@@ -181,7 +166,7 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="../themes/images/paint5.jpg" alt="" /></a></p>
+														<p><a href="product_detail.html"><img src="themes/images/ladies/6.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
 														<a href="products.html" class="category">Commodo consequat</a>
 														<p class="price">$40.25</p>
@@ -189,7 +174,7 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="../themes/images/print2.jpg" alt="" /></a></p>
+														<p><a href="product_detail.html"><img src="themes/images/ladies/7.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">You think water</a><br/>
 														<a href="products.html" class="category">World once</a>
 														<p class="price">$10.45</p>
@@ -197,19 +182,28 @@
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="../themes/images/print3.jpg" alt="" /></a></p>
+														<p><a href="product_detail.html"><img src="themes/images/ladies/8.jpg" alt="" /></a></p>
 														<a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
 														<a href="products.html" class="category">Quis nostrud</a>
 														<p class="price">$35.50</p>
 													</div>
 												</li>																																	
 											</ul>
-										</div>
+										</div> -->
 									</div>							
 								</div>
 							</div>						
 						</div>
 						<br/>
+						<div class="row">
+							<div class="span12">
+								<h4 class="title">
+									<span class="pull-left"><span class="text"><span class="line">Latest <strong>Products</strong></span></span></span>
+									<span class="pull-right">
+										<a class="left button" href="#myCarousel-2" data-slide="prev"></a><a class="right button" href="#myCarousel-2" data-slide="next"></a>
+									</span>
+								</h4>
+				
 						<div class="row feature_box">						
 							<div class="span4">
 								<div class="service">
@@ -242,7 +236,7 @@
 					</div>				
 				</div>
 			</section>
-			
+	
 			<section id="footer-bar">
 				<div class="row">
 					<div class="span3">

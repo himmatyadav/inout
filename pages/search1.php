@@ -30,47 +30,24 @@
 		<div id="top-bar" class="container">
 			<div class="row">
 				<div class="span4">
-					<div class="panel panel-default">
-                        <div class="panel-heading">
-                            Search
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4">
-                                    <form action="search1.php" method="post" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                
-                                            <input class="form-control" placeholder="city name" name="search" required>
-                                             <button type="submit" class="btn btn-default">go</button>
-                                        </div>
-										
-
-									
-                                </div>
-                              	
-                                       
-                                        
-                                    
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                            </form>
-                            <!-- /.row (nested) -->
-                        </div>
+					<form method="POST" class="search_form" action="search1.php">
+						<input type="text" name="search" class="input-block-level search-query" placeholder="eg. bhuj"/>
+                        <input type="submit" value="go"/>
+					</form>
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="#">My Account</a></li>
 							<li><a href="cart.html">Your Cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>					
-							<li><a href="register.html">Login</a></li>		
+							<li><a href="checkout.html">Checkout</a></li>
+							<li>Hi!<?php session_start(); echo $_SESSION["user"];?>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="wrapper" class="container">
+			<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
 					<a href="index.html" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
@@ -83,15 +60,15 @@
 									<li><a href="./products.html">Varius purus</a></li>									
 								</ul>-->
 							</li>															
-							<li><a href="prints.php">Prints</a></li>			
-							<li><a href="crafts.php">Crafts</a>
+							<li><a href="./products.html">Prints</a></li>			
+							<li><a href="./products.html">Crafts</a>
 								<!--<ul>									
 									<li><a href="./products.html">Gifts and Tech</a></li>
 									<li><a href="./products.html">Ties and Hats</a></li>
 									<li><a href="./products.html">Cold Weather</a></li>
 								</ul>-->
 							</li>							
-							<li><a href="sculptures.php">Sculptures</a></li>
+							<li><a href="./products.html">Sculptures</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -114,9 +91,8 @@
 				</div>	-->		
 			</section>
 			<section class="header_text">
-			<section class="header_text">
-				We stand for top quality traditional art.
-                		<br/> 
+				We stand for top quality templates. Our genuine developers always optimized bootstrap commercial templates. 
+				<br/>Don't miss to use our cheap abd best bootstrap templates.
 			</section>
 			<section class="main-content">
 				<div class="row">
@@ -129,9 +105,42 @@
 										<a class="left button" href="#myCarousel" data-slide="prev"></a><a class="right button" href="#myCarousel" data-slide="next"></a>
 									</span>
 								</h4>
-								<div id="myCarousel" class="myCarousel carousel slide">
+								
+                                <div id="myCarousel" class="myCarousel carousel slide">
 									<div class="carousel-inner">
 										<div class="active item">
+                                        	<ul class="thumbnails">												
+												<?php 
+												include('connect.php');
+                                                $search=$_POST['search'];
+												$sql="SELECT * FROM product WHERE city LIKE '%$search%'";
+												$result=mysql_query($sql);
+                                                if(!mysql_fetch_array($result))
+                                                {
+                                                    ?>
+                                                    <li class="span3"><p>          NO RESULT FOUND!!!!</p></li>
+                                                    <?php
+                                                    
+                                                    
+                                                }
+                                                else
+                                                {
+												while($row=mysql_fetch_array($result))
+												{
+													$image_name=$row['image'];
+                                                    ?>
+												<li class="span3">
+													<div class="product-box">
+														<span class="sale_tag"></span>
+														<p><a href="product_detail.php?id=<?php echo $row['id'];?>"><?php echo "<img src='../themes/images/$image_name' alt='Smiley face' class='img-thumbnail'>";?></a></p>
+														<a href="product_detail.html" class="title"><?php echo $row['name'];?></a><br/>
+														<a href="products.html" class="category"><?php echo $row['city'];?></a>
+														<p class="price"><?php echo $row['price']." INR";?></p>
+													</div>
+												</li>
+												<?php } } ?>
+												
+											</ul>
 											<ul class="thumbnails">												
 												<li class="span3">
 													<div class="product-box">

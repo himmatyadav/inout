@@ -427,46 +427,56 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                    <form action="insert.php" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input class="form-control" name="username" required>
-                                            <p class="help-block">Example block-First Middle Last.</p>
+                                            <input class="form-control" name="itemname" required>
+                                            <p class="help-block">Example if painting MONA LISA</p>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input class="form-control" name="phone" placeholder="987654321">
+										<div class="form-group">
+                                            <label>Vendor</label>
+                                            <input class="form-control" name="vendor" required>
+                                           
                                         </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <textarea class="form-control" name="address" rows="3"></textarea>
+                                        	<div class="form-group">
+                                            <label>Quantity</label>
+                                            <input class="form-control" name="quantity" required>
+                                           
                                         </div>
+                                        	<div class="form-group">
+                                            <label>Price</label>
+                                            <input class="form-control" name="price" required>
+                                           
+                                    
+
+										<div class="form-group">
+                                            <label>City</label>
+                                            <input class="form-control" name="city" required>
+                                            
+                                        </div>
+
+										<div class="form-group">
+                                            <label>Description</label>
+                                            <input class="form-control" name="description" required>
+                                                                                   </div>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-6">
-                                    <div class="form-group">
-                                            <label>Gender</label>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="gender" id="optionsRadios1" value="option1" checked>Male
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="gender" id="optionsRadios2" value="option2">Female
-                                                </label>
-                                            </div>
-                                        </div>
+                                    
                                         <div class="form-group">
                                             <label>Category</label>
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                            <select class="form-control" name="category">
+                                                <option>Painting</option>
+                                                <option>Print</option>
+                                                <option>Sculpture</option>
+                                                <option>Craft</option>
+                                                <option>Ornament</option>
+                                                <option>Misc</option>
+                                                                                           
                                             </select>
                                         </div>
+										<label>Image</label><input type="file" name="image">
+										<br>
                                         <button type="submit" class="btn btn-default">Submit Button</button>
                                         <button type="reset" class="btn btn-default">Reset Button</button>
                                     </div>

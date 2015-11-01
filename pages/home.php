@@ -28,16 +28,17 @@
 	</head>
     <body>		
 		<div id="top-bar" class="container">
-			<div class="row">
 				<div class="span4">
-					<div class="panel panel-default">
+					 <div class="row">
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             Search
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4">
-                                    <form action="search1.php" method="post" enctype="multipart/form-data">
+                                    <form action="search1.php" method="post">
                                         <div class="form-group">
                                 
                                             <input class="form-control" placeholder="city name" name="search" required>
@@ -62,18 +63,20 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="#">My Account</a></li>
-							<li><a href="cart.html">Your Cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>					
-							<li><a href="register.html">Login</a></li>		
+							<li><a href="cart.php">Your Cart</a></li>
+							<li><a href="checkout.php">Checkout</a></li>
+							<li><a href="order.php">Customize Order</a></li>
+                            <li>Hi!<?php session_start(); echo $_SESSION["user"];?>
+                            <li><a href="logout.php">logout</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="wrapper" class="container">
+			<div id="wrapper" class="container">
 			<section class="navbar main-menu">
 				<div class="navbar-inner main-menu">				
-					<a href="index.html" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
+				
 					<nav id="menu" class="pull-right">
 						<ul>
 							<li><a href="paintings.php">Paintings</a>					
@@ -91,19 +94,23 @@
 									<li><a href="./products.html">Cold Weather</a></li>
 								</ul>-->
 							</li>							
-							<li><a href="sculptures.php">Sculptures</a></li>
+							
+                            <li><a href="sculptures.php">Sculptures</a></li>
+                            <li><a href="sculptures.php">Ornaments</a></li>
+                            <li><a href="sculptures.php">Misc</a></li>
 						</ul>
 					</nav>
 				</div>
 			</section>
-			<section  class="homepage-slider" id="home-slider">
-				<!--<div class="flexslider">
+            </div>
+		<!--	<section  class="homepage-slider" id="home-slider">
+				<div class="flexslider">
 					<ul class="slides">
 						<li>
-							<img src="themes/images/carousel/banner-1.jpg" alt="" />
+							<img src="../themes/images/carousel/banner-1.jpg" alt="" />
 						</li>
 						<li>
-							<img src="themes/images/carousel/banner-2.jpg" alt="" />
+							<img src="../themes/images/carousel/banner-2.jpg" alt="" />
 							<div class="intro">
 								<h1>Mid season sale</h1>
 								<p><span>Up to 50% Off</span></p>
@@ -111,13 +118,16 @@
 							</div>
 						</li>
 					</ul>
-				</div>	-->		
-			</section>
+				</div>		
+			</section> -->
 			<section class="header_text">
-			<section class="header_text">
+            <a href="welcome.php" class="logo pull-left"><img src="../themes/images/logo.png" class="site_logo" alt="" /></a>
+           <!-- <h1 class="jumbotron">TradKart</h1> -->
+				<section class="header_text">
 				We stand for top quality traditional art.
-                		<br/> 
+                		<br/>
 			</section>
+            </section>
 			<section class="main-content">
 				<div class="row">
 					<div class="span12">													
@@ -137,34 +147,34 @@
 													<div class="product-box">
 														<span class="sale_tag"></span>
 														<p><a href="product_detail.html"><img src="../themes/images/paint.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
-														<p class="price">$17.25</p>
+														<a href="product_detail.html" class="title">Baarish</a><br/>
+														<a href="products.html" class="category">Mawsynram</a>
+														<p class="price">INR 4000</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
 														<p><a href="product_detail.html"><img src="../themes/images/paint1.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$32.50</p>
+														<a href="product_detail.html" class="title">Sandhya</a><br/>
+														<a href="products.html" class="category">bhuj</a>
+														<p class="price">INR 3350</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="../themes/images/paint2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly turned</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$14.20</p>
+														<a href="product_detail.html" class="title">Basant</a><br/>
+														<a href="products.html" class="category">Navsari</a>
+														<p class="price">INR 6000</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="../themes/images/paint3.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think fast</a><br/>
-														<a href="products.html" class="category">World once</a>
-														<p class="price">$31.45</p>
+														<a href="product_detail.html" class="title">Shishir</a><br/>
+														<a href="products.html" class="category">Anand</a>
+														<p class="price">INR 4299</p>
 													</div>
 												</li>
 											</ul>
@@ -174,33 +184,33 @@
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="../themes/images/paint4.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$22.30</p>
+														<a href="product_detail.html" class="title">Saathiya</a><br/>
+														<a href="products.html" class="category">kosli</a>
+														<p class="price">INR 7499</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="../themes/images/paint5.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
-														<p class="price">$40.25</p>
+														<a href="product_detail.html" class="title">Raaste ka vaasta</a><br/>
+														<a href="products.html" class="category">Bhiwani</a>
+														<p class="price">INR 8000</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="../themes/images/print2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think water</a><br/>
-														<a href="products.html" class="category">World once</a>
-														<p class="price">$10.45</p>
+														<a href="product_detail.html" class="title">Tanhayi</a><br/>
+														<a href="products.html" class="category">Dharuhera</a>
+														<p class="price">INR 2500</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<p><a href="product_detail.html"><img src="../themes/images/print3.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
-														<p class="price">$35.50</p>
+														<a href="product_detail.html" class="title">Anjaan</a><br/>
+														<a href="products.html" class="category">Rewari</a>
+														<p class="price">INR 1500</p>
 													</div>
 												</li>																																	
 											</ul>
@@ -277,9 +287,7 @@
 					</div>					
 				</div>	
 			</section>
-			<section id="copyright">
-				<span>Copyright 2013 bootstrappage template  All right reserved.</span>
-			</section>
+		
 		</div>
 		<script src="themes/js/common.js"></script>
 		<script src="themes/js/jquery.flexslider-min.js"></script>
