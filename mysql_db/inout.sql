@@ -126,6 +126,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `username`, `email`, `phone`, `password`) VALUES
 (1, 'heet', 'heet3727@gmail.com', '9408693008', '123');
 
+INSERT INTO `user` (`id`, `username`, `email`, `phone`, `password`) VALUES
+(1, 'lalo', 'lalo3727@gmail.com', '9408693008', '123');
+
 -- --------------------------------------------------------
 
 --
